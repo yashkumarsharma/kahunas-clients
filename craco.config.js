@@ -4,10 +4,10 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   devServer: {
-    port: 3001,
+    port: 3002,
     hot: true,
     historyApiFallback: {
-      index: '/workouts/index.html',
+      index: '/clients/index.html',
     },
   },
   webpack: {
@@ -15,7 +15,7 @@ module.exports = {
       webpackConfig.output.publicPath = 'auto'
       webpackConfig.plugins.push(
         new ModuleFederationPlugin({
-          name: 'workouts',
+          name: 'clients',
           filename: 'remoteEntry.js',
           exposes: {
             './App': './src/App',

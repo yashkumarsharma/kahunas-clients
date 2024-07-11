@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { useStore } from 'container/StoreContext'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
-import NutritionPage from './containers/NutritionPage'
+import ClientPage from './containers/ClientPage'
 import LandingPage from './containers/LandingPage'
 import i18n from './translations/i18n'
 
@@ -37,10 +37,10 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <Router basename='/workouts'>
+      <Router basename='/clients'>
         <Routes>
           <Route path='/' element={<LandingPage />} />
-          <Route path='/nutrition' element={<NutritionPage />} />
+          <Route path='/:id' element={<ClientPage />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
       </Router>

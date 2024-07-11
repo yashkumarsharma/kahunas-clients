@@ -1,13 +1,8 @@
 {
   "welcome": "Welcome",
-  "description": "This is the main application.",
-  "landing-heading": "You can add following workouts for your clients",
-  "Squats": "Squats",
-  "Push-ups": "Push-ups",
-  "Plank": "Plank",
-  "Lunges": "Lunges",
-  "Deadlifts": "Deadlifts",
-  "Nutrition Information": "Nutrition Information",
-  "Checkout Nutrition Page": "Checkout Nutrition Page",
-  "Workouts": "Workouts"
+  "Client List": "Client List",
+  "Client Information": "Client Information",
+  "Name": "Name",
+  "Slug": "Slug",
+  "Age": "Age"
 }

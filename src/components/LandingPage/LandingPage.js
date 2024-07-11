@@ -2,28 +2,23 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
+import { clients } from '../../data/clientList'
 import './styles.css'
 
 const LandingPage = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='workouts-landing-page'>
-      <div className='workouts-landing-content'>
-        <p className='title'>{t('Workouts')}</p>
-        <p>{t('landing-heading')}</p>
-
-        <ul>
-          <li>{t('Squats')}</li>
-          <li>{t('Push-ups')}</li>
-          <li>{t('Deadlifts')}</li>
-          <li>{t('Lunges')}</li>
-          <li>{t('Plank')}</li>
+    <div className='clients-landing-page'>
+      <div className='client-list-page'>
+        <div className='title'>{t('Client List')}</div>
+        <ul className='client-list'>
+          {clients.map(client => (
+            <li key={client.id}>
+              <Link to={`/${client.id}`}>{client.name}</Link>
+            </li>
+          ))}
         </ul>
-      </div>
-
-      <div className='workouts-landing-footer'>
-        <Link to='/nutrition'>{t('Checkout Nutrition Page')}</Link>
       </div>
     </div>
   )
