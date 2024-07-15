@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import { StoreProvider } from 'container/StoreContext'
 
 import ClientPage from './containers/ClientPage'
 import LandingPage from './containers/LandingPage'
@@ -17,15 +16,13 @@ const App = () => {
   }, [language])
 
   return (
-    <StoreProvider>
-      <Router basename='/clients'>
-        <Routes>
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/:id' element={<ClientPage />} />
-          <Route path='*' element={<Navigate to='/' />} />
-        </Routes>
-      </Router>
-    </StoreProvider>
+    <Router basename='/clients'>
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/:id' element={<ClientPage />} />
+        <Route path='*' element={<Navigate to='/' />} />
+      </Routes>
+    </Router>
   )
 }
 
